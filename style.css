@@ -41,8 +41,19 @@ a {
   background: #9aa2af;
   color: #5f5b5b;
 }
+.visit-button {
+  font-size: 14px;
+  color: #cacaca;
+  font-weight: bold;
+  padding: 3px 35px;
+  border-radius: 10px;
+  background: radial-gradient(rgb(0 0 0), rgb(125 125 125));
+}
 .rating .fa {
   color: mediumturquoise;
+}
+.rating {
+  margin-bottom: 10px;
 }
 /* ---------GLOBAL STYLE END-------- */
 
@@ -186,7 +197,7 @@ nav ul li a {
 
 /* -----------  FEATURED GAME------------ */
 .featured-product {
-  background-image: url("./Images/black-hexagon.jpg");
+  background-image: url("images/black-hexagon.jpg");
   padding: 50px 0px;
 }
 .title {
@@ -210,7 +221,7 @@ nav ul li a {
 }
 .col-4 {
   transition: transform 0.5s;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .col-4 img {
   width: 100%;
@@ -340,7 +351,8 @@ small {
 
 /* ---------------PRODUCT PAGE STYLE---------- */
 .product-item {
-  background-image: url("./images/wp.jpg");
+  /* background-image: url("images/ghost-1.jpg"); */
+  background: radial-gradient(rgb(22 29 51), rgb(43 33 33));
 }
 /* .game-container { */
 /* border: 1px solid #fff; */
@@ -381,8 +393,53 @@ select {
 }
 /* ---------------PRODUCT PAGE STYLE END---------- */
 
-/*--- MEDIA QUERY FOR MENU-----*/
+/* ----------------GAME-DETAILS-STYLE--------------- */
+.game-details-container {
+  background: url("images/game/snowRunner-wallpaper.jpg") no-repeat;
+  background-size: cover;
+}
+.game-row-grid {
+  display: grid;
+  grid-template-columns: 35% auto;
+  grid-gap: 3rem;
+  margin: 50px 0px;
+}
+.col-2 img {
+  width: 100%;
+  object-fit: contain;
+}
+.small-img-row {
+  display: flex;
+  justify-content: space-around;
+}
+.details-container {
+  /* border: 1px solid #fff; */
+  background: #000;
+  padding: 15px;
+  color: #fff;
+}
+.details-container p a {
+  color: #fff;
+}
+.game-description-image {
+  width: 100%;
+}
+.medium-container {
+  max-width: 85%;
+  margin: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.game-list {
+  list-style-type: disclosure-closed;
+  margin-left: 25px;
+}
+.small-img-col:hover {
+  cursor: pointer;
+}
+/* ----------------GAME-DETAILS-STYLE END--------------- */
 
+/*--- MEDIA QUERY FOR MENU-----*/
 @media screen and (max-width: 800px) {
   nav ul {
     position: absolute;
@@ -413,6 +470,9 @@ select {
   }
   nav ul li a {
     color: #cac9c9;
+  }
+  .game-row-grid {
+    display: block;
   }
 }
 
@@ -475,6 +535,9 @@ select {
   /* featured product end */
   .testimonial .col-3 {
     height: 100%;
+  }
+  .visit-button {
+    font-size: 20px;
   }
 }
 /* MEDIA QUERY FOR MEDIUM DEVICE END */
