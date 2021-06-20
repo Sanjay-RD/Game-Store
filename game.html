@@ -33,7 +33,7 @@
               </a>
             </div>
             <nav>
-              <ul id="MenuItems">
+              <ul id="menuItems">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="game.html">Games</a></li>
                 <li><a href="Blog.html">Blog</a></li>
@@ -41,7 +41,7 @@
                 <li><a href="login.html">Account</a></li>
               </ul>
             </nav>
-            <i class="fa fa-bars menu-icon" onclick="menutoogle()"></i>
+            <i class="fa fa-bars menu-icon" id="menuClick"></i>
           </div>
         </div>
       </div>
@@ -277,18 +277,6 @@
       </div>
       <!-------footer end -->
     </div>
-    <!------ Js for toogle menu------>
-    <script>
-      var MenuItems = document.getElementById("MenuItems");
-      MenuItems.style.maxHeight = "0px";
-
-      function menutoogle() {
-        if (MenuItems.style.maxHeight == "0px") {
-          MenuItems.style.maxHeight = "200px";
-        } else {
-          MenuItems.style.maxHeight = "0px";
-        }
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
