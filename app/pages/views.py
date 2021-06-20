@@ -1,6 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-# Create your views here.
+# views is use to render .html template
+
+# index is function that we pass from urls ie-> views.index
+
+
 def index(request):
-    return HttpResponse('<h1>Hello</h1>')
+    return render(request, 'pages/index.html')
+
+
+def about(request):
+    return render(request, 'pages/about.html')
