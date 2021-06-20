@@ -404,7 +404,7 @@ select {
   grid-gap: 3rem;
   margin: 50px 0px;
 }
-.col-2 img {
+.game-col-2 img {
   width: 100%;
   object-fit: contain;
 }
