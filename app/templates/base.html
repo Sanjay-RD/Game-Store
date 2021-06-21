@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,10 +20,20 @@
       crossorigin="anonymous"
     ></script>
     <!-- style -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
     <title>GN | Game of Nepal</title>
   </head>
   <body>
-    {% block content %} {% endblock %}
+    <div
+    {% if '/' == request.path %}
+      class="showcase"
+    {% elif 'about' in request.path %}
+      class="product-item"
+    {% endif %}
+    >{% include 'partials/_navbar.html' %}</div>
+    {% block content %} 
+    {% endblock %} 
+    {% include 'partials/_footer.html' %}
+    <script src="{% static 'script.js' %}"></script>
   </body>
 </html>
