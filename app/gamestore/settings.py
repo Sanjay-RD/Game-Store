@@ -119,8 +119,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+# there is no name convential to create static folder with name static name can be any ie: utils,file and many other WHEN we run python manage.py collectstatic it will create folder name with static
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+# STATICFILES_DIRS IS USED TO ALLOCATE THE ACTUAL PATH OF STATIC FILE WHERE IT IS LOCATED
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'gamestore/static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
