@@ -24,13 +24,6 @@
     <title>GN | Game of Nepal</title>
   </head>
   <body>
-    <div
-    {% if '/' == request.path %}
-      class="showcase"
-    {% elif 'about' in request.path %}
-      class="product-item"
-    {% endif %}
-    >{% include 'partials/_navbar.html' %}</div>
     {% block content %} 
     {% endblock %} 
     {% include 'partials/_footer.html' %}

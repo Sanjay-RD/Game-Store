@@ -1,3 +1,236 @@
-{% extends 'base.html' %} {% block content %}
-<h1>Index page</h1>
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+
+<div class="showcase">
+    <!-- header -->
+    {% include 'partials/_navbar.html' %}
+    <!-- header end -->
+  <!-- showcase -->
+  <div class="showcase-content">
+    <div class="row-flex">
+      <div class="col-2">
+        <div class="text-center-sm">
+          <h1>Explore <br />Games for gamers</h1>
+          <p>Adding Fun to your Life</p>
+          <a href="" class="btn">Explore Now &#8594;</a>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="trending-post">
+          <div class="trending-content">
+            <h2>TRENDING GAMES</h2>
+            <div class="trending-item">
+              <div class="trending-box">
+                <div class="post-image">
+                  <img src="{% static 'images/lp.jpg' %}" alt="" />
+                </div>
+                <div class="item-content">
+                  <h6>
+                    <a href="#">
+                      Jalopy developer is making a game where you 'build
+                      stuff...
+                    </a>
+                  </h6>
+                  <ul>
+                    <li><i class="far fa-clock"></i> August 01, 2020</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="trending-item">
+              <div class="trending-box">
+                <div class="post-image">
+                  <img src="{% static 'images/lp.jpg' %}" alt="" />
+                </div>
+                <div class="item-content">
+                  <h6>
+                    <a href="#">
+                      Jalopy developer is making a game where you 'build
+                      stuff...
+                    </a>
+                  </h6>
+                  <ul>
+                    <li><i class="far fa-clock"></i> August 01, 2020</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="trending-item">
+              <div class="trending-box">
+                <div class="post-image">
+                  <img src="{% static 'images/ic.webp' %}" alt="" />
+                </div>
+                <div class="item-content">
+                  <h6>
+                    <a href="#">
+                      Jalopy developer is making a game where you 'build
+                      stuff...
+                    </a>
+                  </h6>
+                  <ul>
+                    <li><i class="far fa-clock"></i> August 01, 2020</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="trending-item">
+              <div class="trending-box">
+                <div class="post-image">
+                  <img src="{% static 'images/lp-2.jpg.webp' %}" alt="" />
+                </div>
+                <div class="item-content">
+                  <h6>
+                    <a href="#">
+                      Jalopy developer is making a game where you 'build
+                      stuff...
+                    </a>
+                  </h6>
+                  <ul>
+                    <li><i class="far fa-clock"></i> August 01, 2020</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- showcase end -->
+<!------  Featured categories   ------>
+<div class="categories">
+  <div class="small-container">
+    <div class="row-grid">
+      <div class="col-3">
+        <img src="{% static 'images/cat3.png' %}" />
+      </div>
+      <div class="col-3">
+        <img src="{% static 'images/cat2.png' %}" />
+      </div>
+      <div class="col-3">
+        <img src="{% static 'images/cat5.jpg' %}" />
+      </div>
+      <div class="col-3">
+        <img src="{% static 'images/cat1.png' %}" />
+      </div>
+    </div>
+  </div>
+</div>
+<!---------Featured categories end------------>
+
+<!------  Featured Products   ------>
+<div class="featured-product">
+  <div class="small-container">
+    <h2 class="title">Featured Games</h2>
+    <div class="grid-4">
+      <div class="col-4">
+        <a href="game-details.html"
+          ><img src="{% static 'images/product-1.jpeg' %}"
+        /></a>
+        <a href="game-details.html"><h4>Red Dead Redemption 2</h4></a>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <a href="game-details.html" class="visit-button">Read More</a>
+      </div>
+      <div class="col-4">
+        <a href="game-details.html"
+          ><img src="{% static 'images/product-2.jpg' %}"
+        /></a>
+        <h4>Among Us</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half"></i>
+        </div>
+        <a href="game-details.html" class="visit-button">Read More</a>
+      </div>
+      <div class="col-4">
+        <img src="{% static 'images/product-3.jpg' %}" />
+        <h4>Hitman 3</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half-o"></i>
+        </div>
+        <a href="game-details.html" class="visit-button">Read More</a>
+      </div>
+      <div class="col-4">
+        <img src="{% static 'images/prodcut-4.jpg' %}" />
+        <h4>Assasins Creed Valhalla</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half-o"></i>
+        </div>
+        <a href="game-details.html" class="visit-button">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="small-container">
+    <h2 class="title">Latest Games</h2>
+    <div class="grid-4">
+      <div class="col-4">
+        <img src="{% static 'images/product-7.jpg' %}" />
+        <h4>SUBNAUTICA BELOW ZERO</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <a href="game-details.html" class="visit-button">Read More</a>
+      </div>
+      <div class="col-4">
+        <img src="{% static 'images/prodcut-6.jpg' %}" />
+        <h4>Death Stranding</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half"></i>
+        </div>
+        <a href="game-details.html" class="visit-button">Read More</a>
+      </div>
+      <div class="col-4">
+        <img src="{% static 'images/product-5.jpg' %}" />
+        <h4>Call of Duty:Modern Warfare</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half-o"></i>
+        </div>
+        <a href="game-details.html" class="visit-button">Read More</a>
+      </div>
+      <div class="col-4">
+        <img src="{% static 'images/product-8.jpg' %}" />
+        <h4>Battelfield V</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half-o"></i>
+        </div>
+        <a href="game-details.html" class="visit-button">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!------  Featured Products end   ------>
 {% endblock %}
