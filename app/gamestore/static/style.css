@@ -373,7 +373,8 @@ select {
   border: 1px solid #ff0000;
 }
 .page-btn {
-  margin: 30px auto 30px;
+  /* margin: 30px auto 30px; */
+  padding-bottom: 30px;
 }
 .page-btn span {
   display: inline-block;
