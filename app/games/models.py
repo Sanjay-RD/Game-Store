@@ -29,6 +29,7 @@ class Game(models.Model):
     photo_4 = models.ImageField(upload_to='photos/%y/%m/%d/', blank=True)
     photo_5 = models.ImageField(upload_to='photos/%y/%m/%d/', blank=True)
     is_trending = models.BooleanField(default=True)
+    is_featured = models.BooleanField(default=True)
     created_at = models.DateTimeField(default=datetime.now)
 
     def __str__(self):
