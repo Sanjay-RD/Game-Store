@@ -11,3 +11,7 @@ def index(request):
 
 def about(request):
     return render(request, 'pages/about.html')
+
+
+def account(request):
+    return render(request,'pages/account.html')

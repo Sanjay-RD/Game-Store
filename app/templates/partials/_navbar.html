@@ -4,7 +4,10 @@
     <div class="navbar">
       <div class="logo">
         <a href="{% url 'index' %}">
-          <img src="{% static 'images/logo/logo_transparent.png' %}" class="logo" />
+          <img
+            src="{% static 'images/logo/logo_transparent.png' %}"
+            class="logo"
+          />
         </a>
       </div>
       <nav>
@@ -13,7 +16,7 @@
           <li><a href="{% url 'games' %}">Games</a></li>
           <li><a href="Blog.html">Blog</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="login.html">Account</a></li>
+          <li><a href="{% url 'account' %}">Account</a></li>
         </ul>
       </nav>
       <i class="fa fa-bars menu-icon" id="menuClick"></i>
