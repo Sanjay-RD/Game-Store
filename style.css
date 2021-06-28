@@ -247,6 +247,11 @@ nav ul li a {
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   grid-gap: 1rem;
 }
+/* .grid-latest-games {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+} */
 
 /* -----------  FEATURED GAME END------------ */
 
@@ -541,3 +546,17 @@ select {
   }
 }
 /* MEDIA QUERY FOR MEDIUM DEVICE END */
+
+@media only screen and (min-width: 1200px) {
+  .row-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
+  .col-4 img {
+    height: 400px;
+  }
+}
