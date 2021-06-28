@@ -1,27 +1,16 @@
 from django.db import models
 from django.db.models.base import Model
 from datetime import datetime
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
 
 class Game(models.Model):
     gameTitle = models.CharField(max_length=200)
-    mainDescription = models.TextField()
-    descriptionListOne = models.TextField(blank=True)
-    descriptionListTwo = models.TextField(blank=True)
-    descriptionListThree = models.TextField(blank=True)
-    descriptionListFour = models.TextField(blank=True)
-    minimumListOne = models.TextField()
-    minimumListTwo = models.TextField()
-    minimumListThree = models.TextField()
-    minimumListFour = models.TextField()
-    minimumListFive = models.TextField()
-    recommendedListOne = models.TextField()
-    recommendedListTwo = models.TextField()
-    recommendedListThree = models.TextField()
-    recommendedListFour = models.TextField()
-    recommendedListFive = models.TextField()
+    mainDescription = RichTextField()
+    minimumRequirement = RichTextField(config_name="special")
+    recommendedRequirement = RichTextField(config_name="special")
     photo_main = models.ImageField(upload_to='photos/%y/%m/%d/')
     photo_1 = models.ImageField(upload_to='photos/%y/%m/%d/', blank=True)
     photo_2 = models.ImageField(upload_to='photos/%y/%m/%d/', blank=True)

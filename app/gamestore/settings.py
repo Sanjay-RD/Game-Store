@@ -40,7 +40,28 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor'
 ]
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Styles','Format','Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList','-', 'Outdent', 'Indent', '-',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    },
+    'special':{
+        'toolbar':'Special',
+        'toolbar_Special':[
+            ['Styles', 'Format', 'Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList']
+        ]
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
