@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
 {% load static %} 
+{% load humanize %}
 {% block content %}
 
 <div class="showcase">
@@ -20,78 +21,31 @@
         <div class="trending-post">
           <div class="trending-content">
             <h2>TRENDING GAMES</h2>
-            <div class="trending-item">
-              <div class="trending-box">
-                <div class="post-image">
-                  <img src="{% static 'images/lp.jpg' %}" alt="" />
+            {% if trending_game %}
+              {% for trendingGame in trending_game %}
+                <div class="trending-item">
+                  <div class="trending-box">
+                    <div class="post-image">
+                      <img src="{{ trendingGame.photo_main.url }}" alt="" />
+                    </div>
+                    <div class="item-content">
+                      <h6>
+                        <a href="#">
+                          Jalopy developer is making a game where you 'build
+                          stuff...
+                        </a>
+                      </h6>
+                      <ul>
+                        <li><i class="far fa-clock"></i> {{ trendingGame.created_at }}</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div class="item-content">
-                  <h6>
-                    <a href="#">
-                      Jalopy developer is making a game where you 'build
-                      stuff...
-                    </a>
-                  </h6>
-                  <ul>
-                    <li><i class="far fa-clock"></i> August 01, 2020</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="trending-item">
-              <div class="trending-box">
-                <div class="post-image">
-                  <img src="{% static 'images/lp.jpg' %}" alt="" />
-                </div>
-                <div class="item-content">
-                  <h6>
-                    <a href="#">
-                      Jalopy developer is making a game where you 'build
-                      stuff...
-                    </a>
-                  </h6>
-                  <ul>
-                    <li><i class="far fa-clock"></i> August 01, 2020</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="trending-item">
-              <div class="trending-box">
-                <div class="post-image">
-                  <img src="{% static 'images/ic.webp' %}" alt="" />
-                </div>
-                <div class="item-content">
-                  <h6>
-                    <a href="#">
-                      Jalopy developer is making a game where you 'build
-                      stuff...
-                    </a>
-                  </h6>
-                  <ul>
-                    <li><i class="far fa-clock"></i> August 01, 2020</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="trending-item">
-              <div class="trending-box">
-                <div class="post-image">
-                  <img src="{% static 'images/lp-2.jpg.webp' %}" alt="" />
-                </div>
-                <div class="item-content">
-                  <h6>
-                    <a href="#">
-                      Jalopy developer is making a game where you 'build
-                      stuff...
-                    </a>
-                  </h6>
-                  <ul>
-                    <li><i class="far fa-clock"></i> August 01, 2020</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+              {% endfor %}
+            {% else %}
+              <p>No Trending Game Availavle</p>
+            {% endif %}
+            
           </div>
         </div>
       </div>
@@ -125,110 +79,51 @@
   <div class="small-container">
     <h2 class="title">Featured Games</h2>
     <div class="grid-4">
-      <div class="col-4">
-        <a href="game-details.html"
-          ><img src="{% static 'images/product-1.jpeg' %}"
-        /></a>
-        <a href="game-details.html"><h4>Red Dead Redemption 2</h4></a>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <a href="game-details.html" class="visit-button">Read More</a>
-      </div>
-      <div class="col-4">
-        <a href="game-details.html"
-          ><img src="{% static 'images/product-2.jpg' %}"
-        /></a>
-        <h4>Among Us</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half"></i>
-        </div>
-        <a href="game-details.html" class="visit-button">Read More</a>
-      </div>
-      <div class="col-4">
-        <img src="{% static 'images/product-3.jpg' %}" />
-        <h4>Hitman 3</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half-o"></i>
-        </div>
-        <a href="game-details.html" class="visit-button">Read More</a>
-      </div>
-      <div class="col-4">
-        <img src="{% static 'images/prodcut-4.jpg' %}" />
-        <h4>Assasins Creed Valhalla</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half-o"></i>
-        </div>
-        <a href="game-details.html" class="visit-button">Read More</a>
-      </div>
+      {% if featured_game %}
+        {% for featuredGame in featured_game %}
+          <div class="col-4">
+            <a href="game-details.html"
+              ><img src="{{ featuredGame.photo_main.url }}"
+            /></a>
+            <a href="game-details.html"><h4>{{ featuredGame.gameTitle }}</h4></a>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <a href="game-details.html" class="visit-button">Read More</a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No Featured games</p>
+      {% endif %}
+
     </div>
   </div>
 
   <div class="small-container">
     <h2 class="title">Latest Games</h2>
     <div class="grid-4">
-      <div class="col-4">
-        <img src="{% static 'images/product-7.jpg' %}" />
-        <h4>SUBNAUTICA BELOW ZERO</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-        </div>
-        <a href="game-details.html" class="visit-button">Read More</a>
-      </div>
-      <div class="col-4">
-        <img src="{% static 'images/prodcut-6.jpg' %}" />
-        <h4>Death Stranding</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half"></i>
-        </div>
-        <a href="game-details.html" class="visit-button">Read More</a>
-      </div>
-      <div class="col-4">
-        <img src="{% static 'images/product-5.jpg' %}" />
-        <h4>Call of Duty:Modern Warfare</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half-o"></i>
-        </div>
-        <a href="game-details.html" class="visit-button">Read More</a>
-      </div>
-      <div class="col-4">
-        <img src="{% static 'images/product-8.jpg' %}" />
-        <h4>Battelfield V</h4>
-        <div class="rating">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star-half-o"></i>
-        </div>
-        <a href="game-details.html" class="visit-button">Read More</a>
-      </div>
+      {% if latest_game %}
+        {% for latestGame in latest_game %}
+          <div class="col-4">
+            <img src="{{ latestGame.photo_main.url }}" />
+            <h4>{{ latestGame.gameTitle }}</h4>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <a href="game-details.html" class="visit-button">Read More</a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No Latest Games</p>
+      {% endif %}
+
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from games.models import Game
 
 # views is use to render .html template
 
@@ -6,7 +7,20 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'pages/index.html')
+    # Get Trending game
+    trending_game = Game.objects.all().filter(is_trending=True)[:4]
+    # Get featured game
+    featured_game = Game.objects.all().filter(is_featured=True)[:4]
+    # Get latest game
+    latest_game = Game.objects.order_by('-created_at')[:4]
+
+    context = {
+        'trending_game':trending_game,
+        'featured_game':featured_game,
+        'latest_game':latest_game
+    }
+
+    return render(request, 'pages/index.html', context)
 
 
 def about(request):
