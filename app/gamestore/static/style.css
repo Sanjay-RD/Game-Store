@@ -376,6 +376,9 @@ select {
   /* margin: 30px auto 30px; */
   padding-bottom: 30px;
 }
+.page-disabled{
+  pointer-events: none;
+}
 .page-btn span {
   display: inline-block;
   border: 1px solid #ff523b;
@@ -391,6 +394,12 @@ select {
 .page-btn span:hover {
   background: #ff523b;
   color: #fff;
+}
+.page-btn span a{
+  color:#fff
+}
+.active{
+  background-color: #ff523b;
 }
 /* ---------------PRODUCT PAGE STYLE END---------- */
 
