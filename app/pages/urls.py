@@ -4,6 +4,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('about', views.about, name='about'),
-    path('account', views.account, name='account')
     # using this path('about') we can go to /about route to view the template
 ]

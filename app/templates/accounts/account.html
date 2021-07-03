@@ -18,14 +18,16 @@
                   <span id="register">Register</span>
                   <hr id="Indicator" />
                 </div>
-                <form id="LoginForm">
+                <form id="LoginForm" action="{% url 'login' %}" method="POST">
+                  {% csrf_token %}
                   <input type="text" placeholder="Username" />
                   <input type="password" placeholder="Password" />
                   <button type="submit" class="btn">Login</button><br />
                   <a href="#">Forgot password</a>
                 </form>
 
-                <form id="RegForm">
+                <form id="RegForm" action="{% url 'register' %}" method="POST">
+                  {% csrf_token %}
                   <input type="text" placeholder="Username" />
                   <input type="email" placeholder="Email" />
                   <input type="password" placeholder="Password" />
