@@ -21,3 +21,17 @@ def game(request, game_id):
         'game':game
     }
     return render(request, 'games/game.html',context)
+
+def search(request):
+    query_list = Game.objects.order_by('-created_at')
+    # keyword
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        if keywords:
+            query_list = query_list.filter(gameTitle__icontains=keywords)
+
+    context={
+        'games':query_list,
+        'values':request.GET
+    }
+    return render(request,'games/search.html',context)

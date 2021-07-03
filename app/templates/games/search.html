@@ -9,12 +9,13 @@
       <div class="games-head">
         <h2>All Games</h2>
         <form action="{% url 'search' %}" class="search-form">
-          <input type="text" name="keywords">
+          <input type="text" name="keywords" value="{{ values.keywords }}">
           <input type="submit" value="Search">
         </form>
       </div>
       <div class="grid-4">
-        {% if games %} {% for game in games %}
+        {% if games %} 
+        {% for game in games %}
         <div class="col-4">
           <a href="{% url 'game' game.id %}"
             ><img src="{{ game.photo_main.url }}"
@@ -37,36 +38,6 @@
     </div>
   </div>
   <!-- Game content end -->
-  <!-- pagination button -->
-  <div class="small-container">
-    <div class="page-btn">
-      {% if games.has_other_pages %}
-        {% if games.has_previous %}
-          <span><a href="?page={{games.previous_page_number}}">&#8592;</a></span>
-        {% else %}
-          <span class="page-disabled">&#8592;</span>
-        {% endif %}
-        {% for i in games.paginator.page_range %}
-          {% if games.number == i %}
-            <span class="active"><a>{{i}}</a></span>
-          {% else %}
-            <span><a href="?page={{i}}">{{i}}</a></span>
-          {% endif %}
-        {% endfor %}
-        {% if games.has_next %}
-          <span><a href="?page={{games.next_page_number}}">&#8594;</a></span>
-        {% else %}
-          <span class="page-disabled">&#8594;</span>
-        {% endif %}
-      {% endif %}
-      <!-- <span>&#8592;</span>
-      <span><a href="#">1</a></span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-      <span>&#8594;</span> -->
-    </div>
-  </div>
-  <!-- pagination button end -->
+  
 </div>
 {% endblock %}
