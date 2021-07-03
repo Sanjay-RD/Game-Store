@@ -20,7 +20,8 @@
           <a href="{% url 'game' game.id %}"
             ><img src="{{ game.photo_main.url }}"
           /></a>
-          <a href="p{% url 'game' game.id %}"><h4>{{ game.gameTitle }}</h4></a>
+          <a href="{% url 'game' game.id %}">
+            <h4>{{ game.gameTitle }}</h4></a>
           <div class="rating">
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>

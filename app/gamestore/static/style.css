@@ -166,7 +166,7 @@ nav ul li a {
   color: #b1b1b1;
   transition: all 0.3s;
 }
-.item-content h6 a:hover {
+.item-content h6 a p:hover {
   color: red;
   transition: all 0.3s;
 }
@@ -407,12 +407,16 @@ select {
 .game-details-container {
   background: url("images/game/snowRunner-wallpaper.jpg") no-repeat;
   background-size: cover;
+  padding-bottom: 1px !important;
 }
 .game-row-grid {
   display: grid;
   grid-template-columns: 35% auto;
   grid-gap: 3rem;
   margin: 50px 0px;
+}
+img.small-img {
+    width: 115px !important;
 }
 .game-col-2 img {
   width: 100%;
@@ -440,9 +444,15 @@ select {
   padding-left: 0;
   padding-right: 0;
 }
-.game-list {
+/* .game-list {
   list-style-type: disclosure-closed;
   margin-left: 25px;
+} */
+.list-order ul{
+  margin-left: 25px;
+}
+.list-order ul li{
+  list-style-type: disclosure-closed;
 }
 .small-img-col:hover {
   cursor: pointer;
@@ -619,6 +629,9 @@ form a {
   .visit-button {
     font-size: 20px;
   }
+  img.small-img {
+    width: 100px !important;
+  }
 }
 /* MEDIA QUERY FOR MEDIUM DEVICE END */
 @media only screen and (min-width: 1200px) {
@@ -632,5 +645,14 @@ form a {
   }
   .col-4 img {
     height: 400px;
+  }
+  img.small-img {
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: 900px){
+  img.small-img {
+    width: 80px !important;
   }
 }

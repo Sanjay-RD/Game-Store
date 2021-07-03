@@ -1,5 +1,5 @@
 from django.core import paginator
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Game
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
@@ -16,4 +16,8 @@ def games(request):
 
 
 def game(request, game_id):
-    return render(request, 'games/game.html')
+    game = get_object_or_404(Game,pk=game_id)
+    context={
+        'game':game
+    }
+    return render(request, 'games/game.html',context)

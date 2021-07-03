@@ -14,7 +14,7 @@
         <div class="text-center-sm">
           <h1>Explore <br />Games for gamers</h1>
           <p>Adding Fun to your Life</p>
-          <a href="" class="btn">Explore Now &#8594;</a>
+          <a href="{% url 'games' %}" class="btn">Explore Now &#8594;</a>
         </div>
       </div>
       <div class="col-2">
@@ -26,13 +26,14 @@
                 <div class="trending-item">
                   <div class="trending-box">
                     <div class="post-image">
-                      <img src="{{ trendingGame.photo_main.url }}" alt="" />
+                      <a href="{% url 'game' trendingGame.id %}">
+                        <img src="{{ trendingGame.photo_main.url }}" alt="" />
+                      </a>
                     </div>
                     <div class="item-content">
                       <h6>
-                        <a href="#">
-                          Jalopy developer is making a game where you 'build
-                          stuff...
+                        <a href="{% url 'game' trendingGame.id %}">
+                          {{ trendingGame.mainDescription | safe | truncatewords_html:6 }}
                         </a>
                       </h6>
                       <ul>
@@ -82,10 +83,11 @@
       {% if featured_game %}
         {% for featuredGame in featured_game %}
           <div class="col-4">
-            <a href="game-details.html"
+            <a href="{% url 'game' featuredGame.id %}"
               ><img src="{{ featuredGame.photo_main.url }}"
             /></a>
-            <a href="game-details.html"><h4>{{ featuredGame.gameTitle }}</h4></a>
+            <a href="{% url 'game' featuredGame.id %}">
+              <h4>{{ featuredGame.gameTitle }}</h4></a>
             <div class="rating">
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
@@ -93,7 +95,7 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
             </div>
-            <a href="game-details.html" class="visit-button">Read More</a>
+            <a href="{% url 'game' featuredGame.id %}" class="visit-button">Read More</a>
           </div>
         {% endfor %}
       {% else %}
@@ -109,15 +111,19 @@
       {% if latest_game %}
         {% for latestGame in latest_game %}
           <div class="col-4">
-            <img src="{{ latestGame.photo_main.url }}" />
-            <h4>{{ latestGame.gameTitle }}</h4>
+            <a href="{% url 'game' latestGame.id %}">
+              <img src="{{ latestGame.photo_main.url }}" />
+            </a>
+            <a href="{% url 'game' latestGame.id %}">
+              <h4>{{ latestGame.gameTitle }}</h4>
+            </a>
             <div class="rating">
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
               <i class="fa fa-star"></i>
             </div>
-            <a href="game-details.html" class="visit-button">Read More</a>
+            <a href="{% url 'game' latestGame.id %}" class="visit-button">Read More</a>
           </div>
         {% endfor %}
       {% else %}
