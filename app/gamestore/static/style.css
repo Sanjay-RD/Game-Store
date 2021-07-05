@@ -500,7 +500,7 @@ img.small-img {
   max-width: 300px;
   padding: 0 20px;
   position: absolute;
-  top: 90px;
+  top: 75px;
   transition: transform 1s;
 }
 #LoginForm input,#RegForm input {
@@ -539,6 +539,49 @@ form a {
 }
 /* ------------ACCOUNT PAGE STYLE END------------------ */
 
+/* MESSAGE */
+.alert {
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+.alert-danger{
+  background-color: #ca4444;
+}
+.alert-success{
+  background-color: #28A745;
+}
+.fade{
+  display:none
+}
+/* MESSAGE END */
+
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 /*--- MEDIA QUERY FOR MENU-----*/
 @media screen and (max-width: 800px) {
   nav ul {
