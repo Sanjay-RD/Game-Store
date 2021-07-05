@@ -18,9 +18,9 @@
                   <span id="register">Register</span>
                   <hr id="Indicator" />
                 </div>
+                {% include 'partials/_alerts.html' %}
                 <form id="LoginForm" action="{% url 'login' %}" method="POST">
                   {% csrf_token %}
-                  {% include 'partials/_alerts.html' %}
                   <input type="text" placeholder="Username" />
                   <input type="password" placeholder="Password" />
                   <button type="submit" class="btn">Login</button><br />
@@ -29,10 +29,10 @@
 
                 <form id="RegForm" action="{% url 'register' %}" method="POST">
                   {% csrf_token %}
-                  {% include 'partials/_alerts.html' %}
-                  <input type="text" placeholder="Username" />
-                  <input type="email" placeholder="Email" />
-                  <input type="password" placeholder="Password" />
+                  <input type="text" name="username" placeholder="Username" />
+                  <input type="email" name="email" placeholder="Email" />
+                  <input type="password" name="password" placeholder="Password" />
+                  <input type="password" name="confirm-password" placeholder="Confirm Password" />
                   <button type="submit" class="btn">Register</button>
                 </form>
               </div>

@@ -477,7 +477,7 @@ img.small-img {
 .form-container {
   background: #ffffff;
   width: 300px;
-  height: 325px;
+  height: 395px;
   position: relative;
   text-align: center;
   padding: 20px 0;
@@ -498,9 +498,9 @@ img.small-img {
 }
 .form-container form {
   max-width: 300px;
-  padding: 0 20px;
+  padding: 10px 20px;
   position: absolute;
-  top: 75px;
+  /* top: 75px; */
   transition: transform 1s;
 }
 #LoginForm input,#RegForm input {
@@ -553,6 +553,9 @@ form a {
 }
 .fade{
   display:none
+}
+#message {
+    padding: 0px 20px;
 }
 /* MESSAGE END */
 
