@@ -104,6 +104,22 @@ nav ul li a {
 .showcase-content {
   padding: 80px 0px;
 }
+
+.dropdown-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 60px;
+  padding-top: 5px;
+  visibility: hidden;
+}
+.dropdown-content a {
+  color: #d8d8d8;
+}
+.dropdown:hover .dropdown-content {
+  visibility: visible;
+  /* display: flex; */
+}
 .row-flex {
   display: flex;
   align-items: center;
