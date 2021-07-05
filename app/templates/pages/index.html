@@ -27,7 +27,7 @@
                   <div class="trending-box">
                     <div class="post-image">
                       <a href="{% url 'game' trendingGame.id %}">
-                        <img src="{{ trendingGame.photo_main.url }}" alt="" />
+                        <img src="{{ trendingGame.photo_icon_small.url }}" alt="" />
                       </a>
                     </div>
                     <div class="item-content">
@@ -84,7 +84,7 @@
         {% for featuredGame in featured_game %}
           <div class="col-4">
             <a href="{% url 'game' featuredGame.id %}"
-              ><img src="{{ featuredGame.photo_main.url }}"
+              ><img src="{{ featuredGame.photo_icon_small.url }}"
             /></a>
             <a href="{% url 'game' featuredGame.id %}">
               <h4>{{ featuredGame.gameTitle }}</h4></a>
@@ -112,7 +112,7 @@
         {% for latestGame in latest_game %}
           <div class="col-4">
             <a href="{% url 'game' latestGame.id %}">
-              <img src="{{ latestGame.photo_main.url }}" />
+              <img src="{{ latestGame.photo_icon_small.url }}" />
             </a>
             <a href="{% url 'game' latestGame.id %}">
               <h4>{{ latestGame.gameTitle }}</h4>

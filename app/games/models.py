@@ -11,6 +11,7 @@ class Game(models.Model):
     mainDescription = RichTextField()
     minimumRequirement = RichTextField(config_name="special")
     recommendedRequirement = RichTextField(config_name="special")
+    photo_icon_small = models.ImageField(upload_to='photos/%y/%m/%d/')
     photo_main = models.ImageField(upload_to='photos/%y/%m/%d/')
     photo_1 = models.ImageField(upload_to='photos/%y/%m/%d/', blank=True)
     photo_2 = models.ImageField(upload_to='photos/%y/%m/%d/', blank=True)

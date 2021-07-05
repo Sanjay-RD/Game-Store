@@ -18,7 +18,7 @@
         {% for game in games %}
         <div class="col-4">
           <a href="{% url 'game' game.id %}"
-            ><img src="{{ game.photo_main.url }}"
+            ><img src="{{ game.photo_icon_small.url }}"
           /></a>
           <a href="{% url 'game' game.id %}">
             <h4>{{ game.gameTitle }}</h4></a>
