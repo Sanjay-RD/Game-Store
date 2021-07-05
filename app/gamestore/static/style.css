@@ -519,7 +519,7 @@ form .btn {
 form .btn:focus {
   outline: none;
 }
-#LoginForm {
+#RegForm {
   left: -300px;
 }
 #RedForm {

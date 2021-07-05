@@ -28,13 +28,13 @@ let Indicator = document.getElementById("Indicator");
 let login = document.getElementById("login");
 let register = document.getElementById("register");
 login.addEventListener("click", () => {
-  RegForm.style.transform = "translateX(300px)";
-  LoginForm.style.transform = "translateX(300px)";
-  Indicator.style.transform = "translateX(0px)";
-});
-
-register.addEventListener("click", () => {
   RegForm.style.transform = "translateX(0px)";
   LoginForm.style.transform = "translateX(0px)";
   Indicator.style.transform = "translateX(100px)";
+});
+
+register.addEventListener("click", () => {
+  RegForm.style.transform = "translateX(300px)";
+  LoginForm.style.transform = "translateX(300px)";
+  Indicator.style.transform = "translateX(0px)";
 });

@@ -14,25 +14,25 @@
             <div class="col-2">
               <div class="form-container">
                 <div class="form-btn">
-                  <span id="login">Login</span>
                   <span id="register">Register</span>
+                  <span id="login">Login</span>
                   <hr id="Indicator" />
                 </div>
                 {% include 'partials/_alerts.html' %}
                 <form id="LoginForm" action="{% url 'login' %}" method="POST">
                   {% csrf_token %}
-                  <input type="text" placeholder="Username" />
-                  <input type="password" placeholder="Password" />
+                  <input type="text" name="username" placeholder="Username" required />
+                  <input type="password" name="password" placeholder="Password" required />
                   <button type="submit" class="btn">Login</button><br />
                   <a href="#">Forgot password</a>
                 </form>
 
                 <form id="RegForm" action="{% url 'register' %}" method="POST">
                   {% csrf_token %}
-                  <input type="text" name="username" placeholder="Username" />
-                  <input type="email" name="email" placeholder="Email" />
-                  <input type="password" name="password" placeholder="Password" />
-                  <input type="password" name="confirm-password" placeholder="Confirm Password" />
+                  <input type="text" name="username" placeholder="Username" required />
+                  <input type="email" name="email" placeholder="Email" required />
+                  <input type="password" name="password" placeholder="Password" required />
+                  <input type="password" name="confirm-password" placeholder="Confirm Password" required />
                   <button type="submit" class="btn">Register</button>
                 </form>
               </div>
