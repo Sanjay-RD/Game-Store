@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'games.apps.GamesConfig',
     'accounts.apps.AccountsConfig',
+    'blogs.apps.BlogsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,16 +51,16 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
         'toolbar_Custom': [
-            ['Styles','Format','Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList','-', 'Outdent', 'Indent', '-',
+            ['Styles', 'Format', 'Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
                 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['Link', 'Unlink'],
             ['RemoveFormat', 'Source']
         ]
     },
-    'special':{
-        'toolbar':'Special',
-        'toolbar_Special':[
+    'special': {
+        'toolbar': 'Special',
+        'toolbar_Special': [
             ['Styles', 'Format', 'Bold', 'Italic', 'Underline'],
             ['NumberedList', 'BulletedList']
         ]
@@ -165,8 +166,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-# message 
+# message
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
-

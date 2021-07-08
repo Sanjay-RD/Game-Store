@@ -14,7 +14,7 @@
         <ul id="menuItems">
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'games' %}">Games</a></li>
-          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="{% url 'blogs' %}">Blog</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
             <li class="dropdown">

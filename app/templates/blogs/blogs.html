@@ -1,0 +1,97 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="blog-background">
+  <!-- header include -->
+  {% include 'partials/_navbar.html' %}
+  <!-- header include end -->
+  <div class="small-container">
+    <div class="blog-title">
+      <h1 class="text-center">GN Blogs</h1>
+      <p class="text-center">Enjoy the contents</p>
+    </div>
+
+    <div class="blog-row">
+      <div class="col-md-4">
+        <div class="single-blog">
+          <p class="blog-meta">By Admin <span>June 4, 2021</span></p>
+          <img src="{% static 'images/blog/DG1.jpg' %}" />
+          <h2>
+            <a href="blogs-details.html"
+              >Days Gone PC Review Better Than Ever</a
+            >
+          </h2>
+          <p class="blog-text">
+            Days Gone has ridden onto Steam as the latest Playstation exclusive
+            to make it onto PC, opening up Bend Studio’s work to a whole new
+            audience. I reviewed Days Gone when it first launched on the PS4
+            back in 2018 and found it to be entertaining to play with a strong
+            lead character. A couple of years on my initial thoughts haven’t
+            changed too much, so you can check out the original review for
+            those. It is definitely worth it to pick it up. With the new PC
+            Version it comes with extra Graphics Overhaul which increase the
+            immersiveness.
+          </p>
+          <div class="blog-footer-link">
+            <a href="blogs-details.html" class="read-more-btn">Read More</a>
+            <span
+              ><i class="fa fa-thumbs-o-up"></i>8 Likes,
+              <i class="fa fa-comment-o"></i>5..</span
+            >
+          </div>
+        </div>
+        <div class="single-blog">
+          <p class="blog-meta">By Admin <span>June 4, 2021</span></p>
+          <img src="{% static 'images/blog/Me1.jpg' %}" />
+          <h2>
+            <a href="blogs-details.html"
+              >Mass Effect: Legendary Edition Partial Review</a
+            >
+          </h2>
+          <p class="blog-text">
+            This remastering of the entire Mass Effect trilogy was long lusted
+            after, then rumoured to exist, and then finally one of the worst
+            kept secrets in the industry. Although the franchise was tarnished
+            by the third game’s ending, and a massive fan-driven campaign to get
+            said ending changed, the Mass Effect games remain one of the
+            beloved, cherished and respected series in all of gaming.
+            Expectations have been high, then, especially since BioWare has
+            fallen from grace, becoming a shadow of what they once were.
+          </p>
+          <div class="blog-footer-link">
+            <a href="blogs-details.html" class="read-more-btn">Read More</a>
+            <span
+              ><i class="fa fa-thumbs-o-up"></i>8 Likes,
+              <i class="fa fa-comment-o"></i>5..</span
+            >
+          </div>
+        </div>
+        <div class="single-blog">
+          <p class="blog-meta">By Admin <span>June 4, 2021</span></p>
+          <img src="{% static 'images/blog/OR.jpg' %}" />
+          <h2>
+            <a href="blogs-details.html"
+              >Outriders Review – Surprisingly Good Fun</a
+            >
+          </h2>
+          <p class="blog-text">
+            Well, better late than never, right? Weeks after becoming a hit, in
+            no small way due to launching on Game Pass on day one, my review for
+            Outriders is finally here. People Can Fly have been quiet over the
+            years, working on co-developing and remastering Bulletstorm, so it’s
+            great to see the former Gears of War: Judgement developers releasing
+            their own project after so long, a sci-fi third-person shooter with
+            plenty of loot. Is it worth playing? Should you pick it up or
+            download it from Game pass? Yes, and yes.
+          </p>
+          <div class="blog-footer-link">
+            <a href="blogs-details.html" class="read-more-btn">Read More</a>
+            <span
+              ><i class="fa fa-thumbs-o-up"></i>8 Likes,
+              <i class="fa fa-comment-o"></i>5..</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
