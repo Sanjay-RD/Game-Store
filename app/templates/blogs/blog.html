@@ -8,26 +8,24 @@
     <button class="sumbit-btn">
       <a href="{% url 'blogs' %}">Back</a>
     </button>
-    <div class="single-blog single-blog-detail" style="margin-bottom: 50px">
-      <p class="blog-meta">By Admin <span>June 4, 2021</span></p>
-      <img src="{% static 'images/blog/DG1.jpg' %}" />
-      <h2>Days Gone PC Review Better Than Ever</h2>
-      <p class="blog-text">
-        Days Gone has ridden onto Steam as the latest Playstation exclusive to
-        make it onto PC, opening up Bend Studio’s work to a whole new audience.
-        I reviewed Days Gone when it first launched on the PS4 back in 2018 and
-        found it to be entertaining to play with a strong lead character. A
-        couple of years on my initial thoughts haven’t changed too much, so you
-        can check out the original review for those. It is definitely worth it
-        to pick it up. With the new PC Version it comes with extra Graphics
-        Overhaul which increase the immersiveness.
-      </p>
-    </div>
+    {% if blog %}
+      <div class="single-blog single-blog-detail" style="margin-bottom: 50px">
+        <p class="blog-meta">By {{ blog.user_name }} <span>{{ blog.published_date }}</span></p>
+        <img src="{{ blog.blogImage.url }}" />
+        <h2>{{ blog.blogTitle }}</h2>
+        <p class="blog-text">
+          {{ blog.blogDescription | safe }}
+        </p>
+      </div>
+    {% else %}
+      <p>No Blogs</p>
+    {% endif %}
+    
     <div class="custome-reviews">
       <div class="reviews-output">
         <h1>Reviews</h1>
         <div class="reviews-box">
-          <h4>Sanjay Rishidev</h4>
+          <h4>Ram</h4>
           <div class="rating">
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
@@ -42,7 +40,22 @@
           </p>
         </div>
         <div class="reviews-box">
-          <h4>Sanjay Rishidev</h4>
+          <h4>Sanjay RD</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <p class="date">2021/05/12</p>
+          <p class="comments">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque
+            delectus sed libero consequatur molestias dolorum.
+          </p>
+        </div>
+        <div class="reviews-box">
+          <h4>Sujit Hona</h4>
           <div class="rating">
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
