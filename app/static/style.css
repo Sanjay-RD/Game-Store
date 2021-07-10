@@ -683,7 +683,48 @@ textarea#comment {
 .write-custome-reviews {
   padding-bottom: 25px;
 }
+.create-blog-btn button {
+  height: 40px;
+}
+.create-blog-btn a {
+  padding: 0px 20px;
+}
 /* ------------BLOG PAGE STYLE END------------ */
+
+/* ------------CREATE BLOG POST STYLE------------- */
+.create-blog-container {
+  color: #fff;
+  padding: 30px 0px;
+}
+.create-blog-container form {
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.create-blog-container form label{
+  margin-top: 10px;
+}
+.create-blog-container form input[type="text"] {
+  padding: 12px;
+  /* margin-top: 10px; */
+  font-size: 19px;
+}
+.create-blog-container textarea {
+  /* margin: 15px 0px; */
+  padding: 12px;
+  font-size: 19px;
+  width: 100%;
+}
+.create-blog-container form input[type="file"] {
+  margin-bottom: 15px;
+}
+.create-blog-container form input[type="submit"] {
+  padding: 10px;
+  cursor: pointer;
+}
+/* ------------CREATE BLOG POST STYLE END------------- */
+
 
 /* 
 

@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+<div class="blog-background">
+  {% include 'partials/_navbar.html' %}
+  <div class="small-container">
+    <div class="create-blog-btn">
+      <button>
+        <a href="{% url 'blogs' %}">Back</a>
+      </button>
+    </div>
+    <div class="create-blog-container">
+      <h1>Create Blog</h1>
+      <!-- <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %} -->
+        <!-- {% if user.is_authenticated %}
+            <input type="hidden" name="user_id" value="{{ user.id }}" >
+            <input type="hidden" name="user_name" value="{{ user.username }}" >
+        {% endif %} -->
+        <!-- <input type="text" name="blogTitle" placeholder="Enter Title" />
+        <textarea
+          name="blogDescription"
+          cols="30"
+          rows="20"
+          placeholder="Description"
+        ></textarea>
+        <input type="file" name="blogImage" />
+        <input type="submit" value="Create Blog" /> -->
+        <!-- {{ form.as_p }} -->
+      <!-- </form> -->
+      <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+        {% if user.is_authenticated %}
+          <input type="hidden" name="user_id" value="{{ user.id }}" >
+          <input type="hidden" name="user_name" value="{{ user.username }}" >
+        {% endif %}
+        {{ form }}
+        <input type="submit" value="Create Blog" />
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
