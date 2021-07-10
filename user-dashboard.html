@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/9939086873.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- style -->
+    <link rel="stylesheet" href="style.css" />
+    <title>GN | Games For Nepal</title>
+  </head>
+  <body>
+    <div class="blog-background">
+      <!-- --------HEADER-------- -->
+      <div class="header">
+        <div class="container">
+          <div class="navbar">
+            <div class="logo">
+              <a href="index.html">
+                <img src="images/logo/logo_transparent.png" class="logo" />
+              </a>
+            </div>
+            <nav>
+              <ul id="menuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game.html">Games</a></li>
+                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="account.html">Account</a></li>
+                <!-- <li class="dropdown">
+                  <a href="">sanjay</a>
+                  <div class="dropdown-content">
+                    <a href=""><i class="fas fa-home"></i> Dashboard</a>
+                    <a href=""><i class="fas fa-sign-out-alt"></i> Logout</a>
+                  </div>
+                </li> -->
+              </ul>
+            </nav>
+            <i class="fa fa-bars menu-icon" id="menuClick"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- header end -->
+    <div class="dashboard">
+      <div class="dashboard-showcase">
+        <img src="images/dashboard.jpg" alt="" />
+        <div class="showcase-content">
+          <h1>sanjay Dashboard</h1>
+          <p>Manage Blog and Account</p>
+        </div>
+      </div>
+      <div class="dashboard-container">
+        <div class="navigation-header">
+          <a href="index.html"> Home </a> / <span>Dashboard</span>
+        </div>
+        <div class="user-info">
+          <div class="user-title">
+            <div>
+              <h1>Welcome sanjay</h1>
+              <p>Here are the List of Blogs you have created</p>
+            </div>
+            <div>
+              <div className="view-listing edit-profile">
+                <a href="edit.html" class="user-edit-btn">
+                  <i class="fas fa-edit"></i> Edit Profile
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="room-listing">
+          <h2>Blog Listing</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>BLOG_ID</th>
+                <th>BLOG_TITLE</th>
+                <th>USER_NAME</th>
+                <th>CREATED_AT</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>5</td>
+                <td>gta v blogs demons</td>
+                <td>sanjay RD</td>
+                <td>2020/02/15</td>
+                <td>
+                  <a href="#" class="edit-icon"><i class="fas fa-edit"></i></a>
+                </td>
+                <td>
+                  <a href="#" class="delete-icon"
+                    ><i class="fas fa-trash"></i
+                  ></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!---------Footer----------->
+    <div class="footer">
+      <div class="container">
+        <div class="row-flex">
+          <div class="footer-col-2">
+            <img src="images/logo/logo_transparent.png" />
+            <p>Games, they are with you when you are alone.</p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-------footer end -->
+  </body>
+</html>
