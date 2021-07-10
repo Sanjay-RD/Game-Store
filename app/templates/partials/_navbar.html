@@ -20,7 +20,7 @@
             <li class="dropdown">
               <a href="">Hi {{ user.username | title }}</a>
                 <div class="dropdown-content">
-                  <a href=""><i class="fas fa-home"></i> Dashboard</a>
+                  <a href="{% url 'dashboard' %}"><i class="fas fa-home"></i> Dashboard</a>
                   <a href="javascript:{document.getElementById('logout').submit()}"><i class="fas fa-sign-out-alt"></i> Logout</a>
                   <form action="{% url 'logout' %}" method="POST" id="logout">
                     {% csrf_token %}

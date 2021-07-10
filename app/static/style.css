@@ -112,6 +112,7 @@ nav ul li a {
   right: 60px;
   padding-top: 5px;
   visibility: hidden;
+  z-index: 100;
 }
 .dropdown-content a {
   color: #d8d8d8;
@@ -724,7 +725,105 @@ textarea#comment {
   cursor: pointer;
 }
 /* ------------CREATE BLOG POST STYLE END------------- */
+/* ---------------USER DASHBOARD------------- */
+.dashboard-background {
+  background: url(images/dashboard.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.dashboard {
+  background: #000;
+  color: #fff;
+}
+table {
+  border-collapse: collapse;
+  /* width: 100%; */
+  margin-top: 20px;
+}
+td,
+th {
+  border: 1px solid #e6e6e6;
+  text-align: left;
+  padding: 13px;
+}
+.room-listing {
+  margin: 30px 0px 50px 0px;
+  overflow-x: auto;
+}
+.dashboard img {
+  margin-top: -20px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.dashboard-showcase {
+  position: relative;
+  margin-top: 20px;
+}
+.showcase-dashboard-content {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+.dashboard-container {
+  width: 70%;
+  margin: auto;
+  position: relative;
+}
+.user-edit-btn {
+  color: #000;
+  border: 1px solid #ffe;
+  padding: 6px 10px;
+  background: #fff;
+}
+.create_edit_Btn {
+  display: flex;
+  align-items: flex-end;
+}
+.view-listing.edit-profile {
+  width: 125px;
+}
+.view-listing.create-room {
+  width: 145px;
+  margin-top: 25px;
+  margin-right: 20px;
+}
+a.flex-2 {
+  display: inline-flex;
+  gap: 5px;
+}
+.navigation-header {
+  background-color: #151515;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+.user-info {
+  margin: 25px 0px;
+}
+.user-info .user-title {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.view-listing {
+  background: var(--border-light-color);
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.delete-icon {
+  color: red;
+  font-size: 22px;
+}
+.edit-icon {
+  color: #0400ff;
+  font-size: 22px;
+}
+/* --------------USER-DASHBOARD-END----------------- */
 
 /* 
 

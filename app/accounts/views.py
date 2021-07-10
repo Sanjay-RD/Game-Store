@@ -1,10 +1,16 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages,auth
 from django.contrib.auth.models import User
+from blogs.models import Blog
 # Create your views here.
 
 def dashboard(request):
-    return render(request,'accounts/dashboard.html')
+    user_blogs = Blog.objects.order_by('-published_date').filter(user_id = request.user.id)
+    # print(user_blogs)
+    context = {
+        'blogs':user_blogs
+    }
+    return render(request,'accounts/dashboard.html',context)
 
 def account(request):
     return render(request,'accounts/account.html')

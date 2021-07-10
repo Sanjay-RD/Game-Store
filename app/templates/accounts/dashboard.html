@@ -1,1 +1,71 @@
-<h1>Dashbord</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="blog-background">
+  {% include 'partials/_navbar.html' %}
+  <div class="dashboard">
+    <div class="dashboard-showcase">
+      <img src="{% static 'images/dashboard.jpg' %}" alt="" />
+      <div class="showcase-dashboard-content">
+        <h1>sanjay Dashboard</h1>
+        <p>Manage Blog and Account</p>
+      </div>
+    </div>
+    <div class="dashboard-container">
+      <div class="navigation-header">
+        <a href="index.html"> Home </a> / <span>Dashboard</span>
+      </div>
+      <div class="user-info">
+        <div class="user-title">
+          <div>
+            <h1>Welcome sanjay</h1>
+            <p>Here are the List of Blogs you have created</p>
+          </div>
+          <div>
+            <div class="view-listing edit-profile">
+              <a href="edit.html" class="user-edit-btn">
+                <i class="fas fa-edit"></i> Edit Profile
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% if blogs %}
+      <div class="room-listing">
+        <h2>Blog Listing</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>BLOG_ID</th>
+              <th>BLOG_TITLE</th>
+              <th>USER_NAME</th>
+              <th>CREATED_AT</th>
+              <th>EDIT</th>
+              <th>DELETE</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for blog in blogs %}
+                <tr>
+                    <td>{{ blog.id }}</td>
+                    <td>{{ blog.blogTitle }}</td>
+                    <td>{{ blog.user_name }}</td>
+                    <td>{{ blog.published_date }}</td>
+                    <td>
+                        <a href="#" class="edit-icon"><i class="fas fa-edit"></i></a>
+                    </td>
+                    <td>
+                        <a href="#" class="delete-icon"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+        <p>No Blogs To Show</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endblock %}
+</div>
