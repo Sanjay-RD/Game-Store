@@ -8,17 +8,17 @@
       <h1 class="text-center">GN Blogs</h1>
       <p class="text-center">Enjoy the contents</p>
     </div>
-    <div class="create-blog-btn">
-      <button>
-        <a
-        {% if user.is_authenticated %}
-          href="{% url 'createBlog' %}"
-        {% else %}
-          href="{% url 'login' %}"
-        {% endif %}
-        >Create Blogs</a>
+    <a
+      {% if user.is_authenticated %}
+      href="{% url 'createBlog' %}"
+      {% else %}
+      href="{% url 'login' %}"
+      {% endif %}
+    >
+      <button class="submit-btn">
+        Create Blogs
       </button>
-    </div>
+    </a>
     {% include 'partials/_alerts.html' %}
     <div class="blog-row">
       <div class="col-md-4">

@@ -462,6 +462,7 @@ img.small-img {
 }
 .details-container p a {
   color: #fff;
+  border-bottom: 1px solid #fff;
 }
 .game-description-image {
   width: 100%;
@@ -490,6 +491,34 @@ img.small-img {
 /* ------------ACCOUNT PAGE STYLE------------------ */
 .account-page {
   padding: 15px 0px 60px;
+}
+.background-user-update {
+  position: absolute;
+  background: rgb(111 89 89 / 40%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.update-profile-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* display: none; */
+  opacity: 0;
+}
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
 }
 .form-container {
   background: #ffffff;
@@ -540,6 +569,9 @@ form .btn:focus {
 #RegForm {
   left: -300px;
 }
+.update-user-RegForm {
+  left: 0px !important;
+}
 #RedForm {
   left: 0;
 }
@@ -554,6 +586,10 @@ form a {
   margin-top: 8px;
   transform: translateX(100px);
   transition: transform 1s;
+}
+.update-profile-indicator {
+  width: 100% !important;
+  transform: translateX(0px) !important;
 }
 /* ------------ACCOUNT PAGE STYLE END------------------ */
 
@@ -675,7 +711,7 @@ select#rating {
 textarea#comment {
   padding: 10px 20px;
 }
-.sumbit-btn {
+.submit-btn {
   padding: 10px 25px;
   cursor: pointer;
   font-weight: bold;
@@ -703,7 +739,7 @@ textarea#comment {
   flex-direction: column;
   color: #fff;
 }
-.create-blog-container form label{
+.create-blog-container form label {
   margin-top: 10px;
 }
 .create-blog-container form input[type="text"] {
@@ -723,6 +759,11 @@ textarea#comment {
 .create-blog-container form input[type="submit"] {
   padding: 10px;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+form a {
+  color: #002bff;
 }
 /* ------------CREATE BLOG POST STYLE END------------- */
 /* ---------------USER DASHBOARD------------- */
@@ -778,14 +819,15 @@ th {
   border: 1px solid #ffe;
   padding: 6px 10px;
   background: #fff;
+  cursor: pointer;
 }
 .create_edit_Btn {
   display: flex;
   align-items: flex-end;
 }
-.view-listing.edit-profile {
+/* .view-listing.edit-profile {
   width: 125px;
-}
+} */
 .view-listing.create-room {
   width: 145px;
   margin-top: 25px;
@@ -887,6 +929,20 @@ a.flex-2 {
   .game-row-grid {
     display: block;
   }
+  /* user Dashboard */
+  .dashboard-container {
+    width: 90%;
+  }
+  .room-listing ul {
+    display: block;
+  }
+  .user-info .user-title {
+    display: block;
+  }
+  .view-listing.edit-profile {
+    margin-top: 20px;
+  }
+  /* user Dashboard end*/
 }
 
 /*--- MEDIA QUERY FOR MENU END-----*/

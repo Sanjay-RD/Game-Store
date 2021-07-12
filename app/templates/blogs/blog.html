@@ -5,9 +5,11 @@
   <!-- headers end -->
   <!-- individual blog section -->
   <div class="small-container">
-    <button class="sumbit-btn">
-      <a href="{% url 'blogs' %}">Back</a>
-    </button>
+    <a href="{% url 'blogs' %}">
+      <button class="submit-btn">
+        Back
+      </button>
+    </a>
     {% if blog %}
       <div class="single-blog single-blog-detail" style="margin-bottom: 50px">
         <p class="blog-meta">By {{ blog.user_name }} <span>{{ blog.published_date }}</span></p>
@@ -88,7 +90,7 @@
             <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
           </div>
 
-          <input type="submit" class="sumbit-btn" value="Submit" />
+          <input type="submit" class="submit-btn" value="Submit" />
         </form>
       </div>
     </div>

@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <div class="blog-background">
   {% include 'partials/_navbar.html' %}
   <div class="dashboard">
@@ -13,7 +11,7 @@
     </div>
     <div class="dashboard-container">
       <div class="navigation-header">
-        <a href="index.html"> Home </a> / <span>Dashboard</span>
+        <a href="{% url 'index' %}"> Home </a> / <span>Dashboard</span>
       </div>
       <div class="user-info">
         <div class="user-title">
@@ -23,9 +21,9 @@
           </div>
           <div>
             <div class="view-listing edit-profile">
-              <a href="edit.html" class="user-edit-btn">
+              <div class="user-edit-btn" id="editUserBtn">
                 <i class="fas fa-edit"></i> Edit Profile
-              </a>
+              </div>
             </div>
           </div>
         </div>
@@ -45,27 +43,49 @@
             </tr>
           </thead>
           <tbody>
-              {% for blog in blogs %}
-                <tr>
-                    <td>{{ blog.id }}</td>
-                    <td>{{ blog.blogTitle }}</td>
-                    <td>{{ blog.user_name }}</td>
-                    <td>{{ blog.published_date }}</td>
-                    <td>
-                        <a href="#" class="edit-icon"><i class="fas fa-edit"></i></a>
-                    </td>
-                    <td>
-                        <a href="#" class="delete-icon"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
-              {% endfor %}
+            {% for blog in blogs %}
+            <tr>
+              <td>{{ blog.id }}</td>
+              <td>{{ blog.blogTitle }}</td>
+              <td>{{ blog.user_name }}</td>
+              <td>{{ blog.published_date }}</td>
+              <td>
+                <a href="{% url 'editBlog' blog.id %}" class="edit-icon"><i class="fas fa-edit"></i></a>
+              </td>
+              <td>
+                <a href="#" class="delete-icon"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
       {% else %}
-        <p>No Blogs To Show</p>
+      <p>No Blogs To Show</p>
       {% endif %}
     </div>
   </div>
+  <!-- edit profile screen -->
+  <div class="update-profile-container">
+    <div class="form-container">
+      <button class="close-btn"><i class="fas fa-times"></i></button>
+      <div class="form-btn">
+        <span id="register" style="display: unset">Update Your Profile</span>
+        <hr id="Indicator" class="update-profile-indicator" />
+      </div>
+
+      <form id="RegForm" class="update-user-RegForm">
+        <input type="text" placeholder="Username" value="Sanjay" />
+        <input
+          type="email"
+          placeholder="Email"
+          value="rishidevsanjay9@gmail.com"
+        />
+        <input type="password" placeholder="Password" value="12345" />
+        <button type="submit" class="btn">Update</button>
+      </form>
+    </div>
+  </div>
+  <!-- edit profile screen end -->
   {% endblock %}
 </div>

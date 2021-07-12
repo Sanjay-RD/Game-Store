@@ -25,10 +25,23 @@
     <title>GN | Game of Nepal</title>
   </head>
   <body>
-    {% block content %} 
-    {% endblock %} 
-    {% include 'partials/_footer.html' %}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    {% block content %} {% endblock %} {% include 'partials/_footer.html' %}
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script src="{% static 'script.js' %}"></script>
+    <script>
+      let editBtn = document.getElementById("editUserBtn");
+      let updateContainer = document.querySelector(".update-profile-container");
+      let closeBtn = document.querySelector(".close-btn");
+      editBtn.addEventListener("click", () => {
+        updateContainer.style.opacity = 1;
+      });
+      closeBtn.addEventListener("click", () => {
+        updateContainer.style.opacity = 0;
+      });
+    </script>
   </body>
 </html>

@@ -43,6 +43,6 @@ register.addEventListener("click", () => {
 // setTimeout(function () {
 //   message.style.display = "none";
 // }, 3000);
-setTimeout(function(){
+setTimeout(function () {
   $("#message").fadeOut("slow");
 }, 3000);

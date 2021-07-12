@@ -452,6 +452,7 @@ select {
 }
 .details-container p a {
   color: #fff;
+  border-bottom: 1px solid #fff;
 }
 .game-description-image {
   width: 100%;
@@ -474,6 +475,34 @@ select {
 /* ------------ACCOUNT PAGE STYLE------------------ */
 .account-page {
   padding: 15px 0px 60px;
+}
+.background-user-update {
+  position: absolute;
+  background: rgb(111 89 89 / 40%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.update-profile-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* display: none; */
+  opacity: 0;
+}
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
 }
 .form-container {
   background: #ffffff;
@@ -516,13 +545,16 @@ form .btn {
   width: 100%;
   border: none;
   cursor: pointer;
-  margin: 10px;
+  margin: 10px 0px;
 }
 form .btn:focus {
   outline: none;
 }
 #RegForm {
   left: -300px;
+}
+.update-user-RegForm {
+  left: 0px !important;
 }
 #RedForm {
   left: 0;
@@ -538,6 +570,10 @@ form a {
   margin-top: 8px;
   transform: translateX(100px);
   transition: transform 1s;
+}
+.update-profile-indicator {
+  width: 100% !important;
+  transform: translateX(0px) !important;
 }
 /* ------------ACCOUNT PAGE STYLE END------------------ */
 
@@ -639,7 +675,7 @@ select#rating {
 textarea#comment {
   padding: 10px 20px;
 }
-.sumbit-btn {
+.submit-btn {
   padding: 10px 25px;
   cursor: pointer;
   font-weight: bold;
@@ -648,12 +684,12 @@ textarea#comment {
 .write-custome-reviews {
   margin-bottom: 25px;
 }
-.create-blog-btn button {
+/* .create-blog-btn button {
   height: 40px;
 }
 .create-blog-btn a {
   padding: 0px 20px;
-}
+} */
 /* ------------BLOG PAGE STYLE END------------ */
 
 /* ------------CREATE BLOG POST STYLE------------- */
@@ -683,10 +719,12 @@ textarea#comment {
 .create-blog-container form input[type="submit"] {
   padding: 10px;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
 }
 /* ------------CREATE BLOG POST STYLE END------------- */
 
-/* user dashboard */
+/* ---------------USER DASHBOARD------------- */
 .dashboard-background {
   background: url(images/dashboard.jpg);
   background-size: cover;
@@ -707,11 +745,8 @@ th {
   text-align: left;
   padding: 13px;
 }
-tr:nth-child(even) {
-  background-color: #f8f8f9;
-}
 .room-listing {
-  padding: 30px 0px 50px 0px;
+  margin: 30px 0px 50px 0px;
   overflow-x: auto;
 }
 .dashboard img {
@@ -724,13 +759,13 @@ tr:nth-child(even) {
   position: relative;
   margin-top: 20px;
 }
-.showcase-content {
+.showcase-dashboard-content {
   position: absolute;
   top: 0;
   color: #fff;
   width: 100%;
   text-align: center;
-  margin-top: -35px;
+  margin-top: 50px;
 }
 .dashboard-container {
   width: 70%;
@@ -742,14 +777,15 @@ tr:nth-child(even) {
   border: 1px solid #ffe;
   padding: 6px 10px;
   background: #fff;
+  cursor: pointer;
 }
 .create_edit_Btn {
   display: flex;
   align-items: flex-end;
 }
-.view-listing.edit-profile {
+/* .view-listing.edit-profile {
   width: 125px;
-}
+} */
 .view-listing.create-room {
   width: 145px;
   margin-top: 25px;
@@ -787,7 +823,7 @@ a.flex-2 {
   color: #0400ff;
   font-size: 22px;
 }
-/* user dashboard end */
+/* --------------USER-DASHBOARD-END----------------- */
 
 /* 
 
@@ -835,6 +871,7 @@ a.flex-2 {
     width: 100%;
     overflow: hidden;
     transition: max-height 0.5s;
+    z-index: 10;
   }
 
   nav ul li {
@@ -860,6 +897,20 @@ a.flex-2 {
   .game-row-grid {
     display: block;
   }
+  /* user Dashboard */
+  .dashboard-container {
+    width: 90%;
+  }
+  .room-listing ul {
+    display: block;
+  }
+  .user-info .user-title {
+    display: block;
+  }
+  .view-listing.edit-profile {
+    margin-top: 20px;
+  }
+  /* user Dashboard end*/
 }
 
 /*--- MEDIA QUERY FOR MENU END-----*/

@@ -53,94 +53,135 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- header end -->
-    <div class="dashboard">
-      <div class="dashboard-showcase">
-        <img src="images/dashboard.jpg" alt="" />
-        <div class="showcase-content">
-          <h1>sanjay Dashboard</h1>
-          <p>Manage Blog and Account</p>
+      <!-- header end -->
+      <div class="dashboard">
+        <div class="dashboard-showcase">
+          <img src="images/dashboard.jpg" alt="" />
+          <div class="showcase-dashboard-content">
+            <h1>sanjay Dashboard</h1>
+            <p>Manage Blog and Account</p>
+          </div>
         </div>
-      </div>
-      <div class="dashboard-container">
-        <div class="navigation-header">
-          <a href="index.html"> Home </a> / <span>Dashboard</span>
-        </div>
-        <div class="user-info">
-          <div class="user-title">
-            <div>
-              <h1>Welcome sanjay</h1>
-              <p>Here are the List of Blogs you have created</p>
-            </div>
-            <div>
-              <div className="view-listing edit-profile">
-                <a href="edit.html" class="user-edit-btn">
-                  <i class="fas fa-edit"></i> Edit Profile
-                </a>
+        <div class="dashboard-container">
+          <div class="navigation-header">
+            <a href="index.html"> Home </a> / <span>Dashboard</span>
+          </div>
+          <div class="user-info">
+            <div class="user-title">
+              <div>
+                <h1>Welcome sanjay</h1>
+                <p>Here are the List of Blogs you have created</p>
+              </div>
+              <div>
+                <div class="view-listing edit-profile">
+                  <div class="user-edit-btn" id="editUserBtn">
+                    <i class="fas fa-edit"></i> Edit Profile
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="room-listing">
-          <h2>Blog Listing</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>BLOG_ID</th>
-                <th>BLOG_TITLE</th>
-                <th>USER_NAME</th>
-                <th>CREATED_AT</th>
-                <th>EDIT</th>
-                <th>DELETE</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>5</td>
-                <td>gta v blogs demons</td>
-                <td>sanjay RD</td>
-                <td>2020/02/15</td>
-                <td>
-                  <a href="#" class="edit-icon"><i class="fas fa-edit"></i></a>
-                </td>
-                <td>
-                  <a href="#" class="delete-icon"
-                    ><i class="fas fa-trash"></i
-                  ></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+
+          <div class="room-listing">
+            <h2>Blog Listing</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>BLOG_ID</th>
+                  <th>BLOG_TITLE</th>
+                  <th>USER_NAME</th>
+                  <th>CREATED_AT</th>
+                  <th>EDIT</th>
+                  <th>DELETE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5</td>
+                  <td>gta v blogs demons</td>
+                  <td>sanjay RD</td>
+                  <td>2020/02/15</td>
+                  <td>
+                    <a href="editBlog.html" class="edit-icon"
+                      ><i class="fas fa-edit"></i
+                    ></a>
+                  </td>
+                  <td>
+                    <a href="#" class="delete-icon"
+                      ><i class="fas fa-trash"></i
+                    ></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
-    <!---------Footer----------->
-    <div class="footer">
-      <div class="container">
-        <div class="row-flex">
-          <div class="footer-col-2">
-            <img src="images/logo/logo_transparent.png" />
-            <p>Games, they are with you when you are alone.</p>
+
+      <!-- edit profile screen -->
+      <div class="update-profile-container">
+        <div class="form-container">
+          <button class="close-btn"><i class="fas fa-times"></i></button>
+          <div class="form-btn">
+            <span id="register" style="display: unset"
+              >Update Your Profile</span
+            >
+            <hr id="Indicator" class="update-profile-indicator" />
           </div>
-          <div class="footer-col-3">
-            <h3>Useful Links</h3>
-            <ul>
-              <li>Coupons</li>
-              <li>Blog Post</li>
-            </ul>
-          </div>
-          <div class="footer-col-4">
-            <h3>Follow Us</h3>
-            <ul>
-              <li>Facebook</li>
-              <li>Twitter</li>
-              <li>Instagram</li>
-            </ul>
+
+          <form id="RegForm" class="update-user-RegForm">
+            <input type="text" placeholder="Username" value="Sanjay" />
+            <input
+              type="email"
+              placeholder="Email"
+              value="rishidevsanjay9@gmail.com"
+            />
+            <input type="password" placeholder="Password" value="12345" />
+            <button type="submit" class="btn">Update</button>
+          </form>
+        </div>
+      </div>
+      <!-- edit profile screen end -->
+
+      <!---------Footer----------->
+      <div class="footer">
+        <div class="container">
+          <div class="row-flex">
+            <div class="footer-col-2">
+              <img src="images/logo/logo_transparent.png" />
+              <p>Games, they are with you when you are alone.</p>
+            </div>
+            <div class="footer-col-3">
+              <h3>Useful Links</h3>
+              <ul>
+                <li>Coupons</li>
+                <li>Blog Post</li>
+              </ul>
+            </div>
+            <div class="footer-col-4">
+              <h3>Follow Us</h3>
+              <ul>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>Instagram</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <!-------footer end -->
+    <script>
+      let editBtn = document.getElementById("editUserBtn");
+      let updateContainer = document.querySelector(".update-profile-container");
+      let closeBtn = document.querySelector(".close-btn");
+      editBtn.addEventListener("click", () => {
+        updateContainer.style.opacity = 1;
+      });
+      closeBtn.addEventListener("click", () => {
+        updateContainer.style.opacity = 0;
+      });
+    </script>
+    <script src="script.js"></script>
   </body>
 </html>

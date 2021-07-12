@@ -38,7 +38,7 @@ def create(request):
         blogTitle=request.POST['blogTitle'] 
         blogDescription = request.POST['blogDescription']
         blogImage=request.FILES['blogImage'] 
-        print(user_id,user_name,blogTitle,blogDescription,blogImage)
+        # print(user_id,user_name,blogTitle,blogDescription,blogImage)
         blog = Blog(user_id=user_id,user_name=user_name,blogTitle=blogTitle,blogDescription=blogDescription,blogImage=blogImage)
         blog.save()
         messages.success(request,'Your Blogs has been created')
@@ -47,3 +47,19 @@ def create(request):
 
         # return redirect('blogs')
         return redirect('blogs')
+
+
+def editBlog(request,blog_id):
+    blogdata = get_object_or_404(Blog, pk=blog_id)
+    form = BlogForm(instance=blogdata)
+
+    if request.method == "POST":
+        form = BlogForm(request.POST,request.FILES,instance=blogdata)
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+
+    context = {
+        'form': form
+    }
+    return render(request,'blogs/editBlog.html',context)
