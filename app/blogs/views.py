@@ -63,3 +63,11 @@ def editBlog(request,blog_id):
         'form': form
     }
     return render(request,'blogs/editBlog.html',context)
+
+
+def deleteBlog(request,blog_id):
+    blogdata = get_object_or_404(Blog, pk=blog_id)
+    if request.method == "POST":
+        blogdata.delete()
+        messages.success(request,"Your Blog Has Been Deleted")
+        return redirect('dashboard')

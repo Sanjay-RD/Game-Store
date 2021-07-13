@@ -35,13 +35,36 @@
     <script>
       let editBtn = document.getElementById("editUserBtn");
       let updateContainer = document.querySelector(".update-profile-container");
-      let closeBtn = document.querySelector(".close-btn");
+      let deleteContainer = document.querySelectorAll(".delete-container");
+      let updateCloseBtn = document.querySelector("#update-close-btn");
       editBtn.addEventListener("click", () => {
-        updateContainer.style.opacity = 1;
+        updateContainer.style.display = "block";
       });
-      closeBtn.addEventListener("click", () => {
-        updateContainer.style.opacity = 0;
+      updateCloseBtn.addEventListener("click", () => {
+        updateContainer.style.display = "none";
       });
+      //delete container
+      const deleteIcon = document.querySelectorAll('.delete-icon')
+      let deleteCloseBtn = document.querySelectorAll("#delete-close-btn");
+      console.log(deleteIcon)
+      console.log(deleteContainer)
+      console.log(deleteCloseBtn)
+      for(let i=0;i<deleteIcon.length;i++){
+        deleteIcon[i].addEventListener('click',()=>{
+          deleteContainer[i].style.display = "block";
+        })
+      }
+      for(let i=0;i<deleteCloseBtn.length;i++){
+        deleteCloseBtn[i].addEventListener("click", () => {
+          deleteContainer[i].style.display = "none";
+          console.log(deleteContainer[i])
+        });
+      }
+      let message = document.getElementById("message");
+      setTimeout(function () {
+        message.style.display = "none";
+      }, 3000);
+      //delete Container end
     </script>
   </body>
 </html>

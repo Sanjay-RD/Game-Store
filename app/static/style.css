@@ -506,8 +506,7 @@ img.small-img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* display: none; */
-  opacity: 0;
+  display: none;
 }
 .close-btn {
   position: absolute;
@@ -598,6 +597,7 @@ form a {
   color: #fff;
   padding: 10px;
   border-radius: 10px;
+  margin: 20px 0px;
 }
 .alert-danger {
   background-color: #ca4444;
@@ -608,9 +608,9 @@ form a {
 .fade {
   display: none;
 }
-#message {
+/* #message {
   padding: 0px 20px;
-}
+} */
 /* MESSAGE END */
 
 /* ------------BLOG PAGE STYLE------------ */
@@ -860,10 +860,34 @@ a.flex-2 {
 .delete-icon {
   color: red;
   font-size: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 .edit-icon {
   color: #0400ff;
   font-size: 22px;
+}
+.delete-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  color: #000;
+  padding: 15px 15px;
+  background: rgb(210 210 210);
+}
+input.delete-btn {
+  padding: 5px 20px;
+  cursor: pointer;
+  border: 2px solid red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+input.delete-btn:hover{
+  background-color: red;
+  color: #fff;
 }
 /* --------------USER-DASHBOARD-END----------------- */
 

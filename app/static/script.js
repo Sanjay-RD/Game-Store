@@ -39,10 +39,13 @@ register.addEventListener("click", () => {
   Indicator.style.transform = "translateX(0px)";
 });
 
+
+
 // let message = document.getElementById("message");
 // setTimeout(function () {
 //   message.style.display = "none";
 // }, 3000);
-setTimeout(function () {
-  $("#message").fadeOut("slow");
-}, 3000);
+
+// setTimeout(function () {
+//   $("#message").fadeOut("slow");
+// }, 3000);

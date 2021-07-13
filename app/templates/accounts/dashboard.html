@@ -1,11 +1,13 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
 <div class="blog-background">
   {% include 'partials/_navbar.html' %}
   <div class="dashboard">
     <div class="dashboard-showcase">
       <img src="{% static 'images/dashboard.jpg' %}" alt="" />
       <div class="showcase-dashboard-content">
-        <h1>sanjay Dashboard</h1>
+        <h1>{{ user.username }} Dashboard</h1>
         <p>Manage Blog and Account</p>
       </div>
     </div>
@@ -13,16 +15,24 @@
       <div class="navigation-header">
         <a href="{% url 'index' %}"> Home </a> / <span>Dashboard</span>
       </div>
+      {% include 'partials/_alerts.html' %}
       <div class="user-info">
         <div class="user-title">
           <div>
-            <h1>Welcome sanjay</h1>
+            <h1>Welcome {{ user.username }}</h1>
             <p>Here are the List of Blogs you have created</p>
           </div>
           <div>
-            <div class="view-listing edit-profile">
-              <div class="user-edit-btn" id="editUserBtn">
-                <i class="fas fa-edit"></i> Edit Profile
+            <div>
+              <div class="view-listing edit-profile">
+                <div class="user-edit-btn" id="editUserBtn">
+                  <i class="fas fa-edit"></i> Edit Profile
+                </div>
+              </div>
+              <div class="view-listing edit-profile">
+                <a href="{% url 'createBlog' %}" class="user-edit-btn" id="editUserBtn">
+                  <i class="fas fa-plus"></i> Create Blog
+                </a>
               </div>
             </div>
           </div>
@@ -50,10 +60,27 @@
               <td>{{ blog.user_name }}</td>
               <td>{{ blog.published_date }}</td>
               <td>
-                <a href="{% url 'editBlog' blog.id %}" class="edit-icon"><i class="fas fa-edit"></i></a>
+                <a href="{% url 'editBlog' blog.id %}" class="edit-icon"
+                  ><i class="fas fa-edit"></i
+                ></a>
               </td>
               <td>
-                <a href="#" class="delete-icon"><i class="fas fa-trash"></i></a>
+                <button class="delete-icon">
+                  <i class="fas fa-trash"></i>
+                </button>
+                <!-- ----------delete confirm screen----------- -->
+                <div class="delete-container">
+                  <button class="close-btn" id="delete-close-btn">
+                    <i class="fas fa-times"></i>
+                  </button>
+                  <h2>Are you sure you want to delete this blog : <span style="border-bottom: 3px solid #099a09;" >{{blog.blogTitle}}</span> </h2>
+
+                  <form action="{% url 'deleteBlog' blog.id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" class="delete-btn" value="Delete" />
+                  </form>
+                </div>
+                <!-- ----------delete confirm screen end----------- -->
               </td>
             </tr>
             {% endfor %}
@@ -65,10 +92,13 @@
       {% endif %}
     </div>
   </div>
+
   <!-- edit profile screen -->
   <div class="update-profile-container">
     <div class="form-container">
-      <button class="close-btn"><i class="fas fa-times"></i></button>
+      <button class="close-btn" id="update-close-btn">
+        <i class="fas fa-times"></i>
+      </button>
       <div class="form-btn">
         <span id="register" style="display: unset">Update Your Profile</span>
         <hr id="Indicator" class="update-profile-indicator" />
