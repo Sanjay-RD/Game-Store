@@ -19,7 +19,6 @@ def blog(request, blog_id):
 
 def blogs(request):
     blogs = Blog.objects.order_by('-published_date')
-    print(blogs)
     context = {
         'blogs': blogs
     }

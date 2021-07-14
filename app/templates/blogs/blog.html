@@ -36,11 +36,67 @@
             <div class="reviews-box">
               <h4>{{ review.user_name }}</h4>
               <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+                <i
+                style="color: mediumturquoise;"
+                class="
+                {% if review.rating >= 1 %}
+                  fa fa-star
+                {% elif review.rating >= 0.5 %}
+                  fas fa-star-half-alt
+                {% else %}
+                  far fa-star
+                {% endif %}
+                "
+                >
+                </i>
+                <i 
+                style="color: mediumturquoise;"
+                class="
+                {% if review.rating >= 2 %}
+                  fa fa-star
+                {% elif review.rating >= 1.5 %}
+                  fas fa-star-half-alt
+                {% else %}
+                  far fa-star
+                {% endif %}
+                "
+                ></i>
+                <i
+                style="color: mediumturquoise;"
+                class="
+                {% if review.rating >= 3 %}
+                  fa fa-star
+                {% elif review.rating >= 2.5 %}
+                  fas fa-star-half-alt
+                {% else %}
+                  far fa-star
+                {% endif %}
+                "
+                ></i>
+                <i 
+                style="color: mediumturquoise;"
+                class="
+                {% if review.rating >= 4 %}
+                  fa fa-star
+                {% elif review.rating >= 3.5 %}
+                  fas fa-star-half-alt
+                {% else %}
+                  far fa-star
+                {% endif %}
+                "
+                ></i>
+                <i 
+                style="color: mediumturquoise;"
+                class="
+                {% if review.rating >= 5 %}
+                  fa fa-star
+                {% elif review.rating >= 4.5 %}
+                  fas fa-star-half-alt
+                {% else %}
+                  far fa-star
+                {% endif %}
+                "
+                ></i>
               </div>
               <p class="date">{{ review.created_at }}</p>
               <p class="comments">
