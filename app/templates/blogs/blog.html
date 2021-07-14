@@ -10,6 +10,11 @@
         Back
       </button>
     </a>
+
+    <!-- message component -->
+    {% include 'partials/_alerts.html' %}
+    <!-- message component end -->
+
     {% if blog %}
       <div class="single-blog single-blog-detail" style="margin-bottom: 50px">
         <p class="blog-meta">By {{ blog.user_name }} <span>{{ blog.published_date }}</span></p>
@@ -26,73 +31,60 @@
     <div class="custome-reviews">
       <div class="reviews-output">
         <h1>Reviews</h1>
-        <div class="reviews-box">
-          <h4>Ram</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
-          <p class="date">2021/05/12</p>
-          <p class="comments">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque
-            delectus sed libero consequatur molestias dolorum.
-          </p>
-        </div>
-        <div class="reviews-box">
-          <h4>Sanjay RD</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
-          <p class="date">2021/05/12</p>
-          <p class="comments">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque
-            delectus sed libero consequatur molestias dolorum.
-          </p>
-        </div>
-        <div class="reviews-box">
-          <h4>Sujit Hona</h4>
-          <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
-          <p class="date">2021/05/12</p>
-          <p class="comments">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit
-          </p>
-        </div>
+        {% if reviews %}
+          {% for review in reviews %}
+            <div class="reviews-box">
+              <h4>{{ review.user_name }}</h4>
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p class="date">{{ review.created_at }}</p>
+              <p class="comments">
+                {{ review.comments }}
+              </p>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>No Review To show</p>
+        {% endif %}
+
       </div>
     </div>
     <div class="write-custome-reviews">
       <h1>Write a Custome Reviews</h1>
-      <div class="rating-form">
-        <p>Rating</p>
-        <form>
-          <select name="select" id="rating">
-            <option value="select">Select...</option>
-            <option value="1">1-Poor</option>
-            <option value="2">2-Fair</option>
-            <option value="3">3-Good</option>
-            <option value="4">3-Very Good</option>
-            <option value="5">3-Excellent</option>
-          </select>
-          <div class="comment-form">
-            <p>Comment</p>
-            <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
-          </div>
+      {% if user.is_authenticated %}
+        <div class="rating-form">
+          <p>Rating</p>
+          <form action="{% url 'createReview' blog.id %}" method="POST">
+          {% csrf_token %}
+            {% if user.is_authenticated %}
+              <input type="hidden" name="user_id" value="{{ user.id }}" >
+              <input type="hidden" name="user_name" value="{{ user.username }}" >
+            {% endif %}
+            <input type="hidden" name="blog_id" value="{{ blog.id }}" >
+            <select name="rating" id="rating">
+              <option value="rating">Select...</option>
+              <option value="1">1-Poor</option>
+              <option value="2">2-Fair</option>
+              <option value="3">3-Good</option>
+              <option value="4">3-Very Good</option>
+              <option value="5">3-Excellent</option>
+            </select>
+            <div class="comment-form">
+              <p>Comment</p>
+              <textarea id="comment" name="comments" rows="4" cols="50"></textarea>
+            </div>
 
-          <input type="submit" class="submit-btn" value="Submit" />
-        </form>
-      </div>
+            <input type="submit" class="submit-btn" value="Submit" />
+          </form>
+        </div>
+      {% else %}
+        <p><a href="{% url 'account' %}" style="color:#1000ff">SignIn</a> to write a Review</p>
+      {% endif %}
     </div>
   </div>
   <!-- Blog section end -->

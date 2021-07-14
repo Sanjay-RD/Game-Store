@@ -3,13 +3,16 @@ from .models import Blog
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from .forms import BlogForm
+from reviews.models import Review
 # Create your views here.
 
 
 def blog(request, blog_id):
     blog = get_object_or_404(Blog, pk=blog_id)
+    user_review = Review.objects.order_by('-created_at').filter(blog_id = blog_id)
     context = {
-        'blog': blog
+        'blog': blog,
+        'reviews':user_review
     }
     return render(request, 'blogs/blog.html', context)
 

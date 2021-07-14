@@ -3,8 +3,8 @@ from .models import Review
 
 # Register your models here.
 class reviewAdmin(admin.ModelAdmin):
-    list_display=('id','user_id','user_name','rating')
-    list_display_links=('id',)
+    list_display=('id','blog_id','user_name','rating','created_at')
+    list_display_links=('id','blog_id')
     list_per_page = 25
 
 
