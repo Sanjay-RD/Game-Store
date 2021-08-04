@@ -39,6 +39,7 @@
                 <li><a href="blogs.html">Blog</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="account.html">Account</a></li>
+
                 <!-- <li class="dropdown">
                   <a href="">sanjay</a>
                   <div class="dropdown-content">
@@ -48,6 +49,9 @@
                 </li> -->
               </ul>
             </nav>
+            <a href="cart.html"
+              ><i class="fas fa-shopping-bag cart-icon"></i
+            ></a>
             <i class="fa fa-bars menu-icon" id="menuClick"></i>
           </div>
         </div>
@@ -174,29 +178,140 @@
         <h2 class="title">Featured Games</h2>
         <div class="grid-4">
           <div class="col-4">
-            <a href="game-details.html"><img src="images/product-1.jpeg" /></a>
-            <a href="game-details.html"><h4>Red Dead Redemption 2</h4></a>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
+            <div class="box">
+              <div class="box-image">
+                <a href="game-details.html"
+                  ><img class="game-image" src="images/product-1.jpeg"
+                /></a>
+                <ul class="icon">
+                  <li>
+                    <div>
+                      <span>
+                        <i class="fas fa-search"></i>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="add-to-cart-btn">
+                      <span>
+                        <i class="fas fa-shopping-bag"></i>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span>
+                        <i class="far fa-heart"></i>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <a href="game-details.html"
+                ><h4 class="game-title">Red Dead Redemption 2</h4></a
+              >
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="price">Rs. 5000</div>
+              <a href="#" class="cart-btn"> Read More </a>
             </div>
-            <a href="game-details.html" class="visit-button">Read More</a>
           </div>
+
           <div class="col-4">
-            <a href="game-details.html"><img src="images/product-2.jpg" /></a>
-            <h4>Among Us</h4>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half"></i>
+            <div class="box">
+              <div class="box-image">
+                <a href="game-details.html"
+                  ><img class="game-image" src="images/product-2.jpg"
+                /></a>
+                <ul class="icon">
+                  <li>
+                    <div>
+                      <span>
+                        <i class="fas fa-search"></i>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="add-to-cart-btn">
+                      <span>
+                        <i class="fas fa-shopping-bag"></i>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span>
+                        <i class="far fa-heart"></i>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <a href="game-details.html"
+                ><h4 class="game-title">Among Us</h4></a
+              >
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+              </div>
+              <div class="price">Rs. 4000</div>
+              <a href="#" class="cart-btn"> Read More </a>
             </div>
-            <a href="game-details.html" class="visit-button">Read More</a>
           </div>
+
+          <div class="col-4">
+            <div class="box">
+              <div class="box-image">
+                <a href="game-details.html"
+                  ><img class="game-image" src="images/product-3.jpg"
+                /></a>
+                <ul class="icon">
+                  <li>
+                    <div>
+                      <span>
+                        <i class="fas fa-search"></i>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="add-to-cart-btn">
+                      <span>
+                        <i class="fas fa-shopping-bag"></i>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span>
+                        <i class="far fa-heart"></i>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <a href="game-details.html"
+                ><h4 class="game-title">djfalkdsjfla Us</h4></a
+              >
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half"></i>
+              </div>
+              <div class="price">Rs. 4000</div>
+              <a href="#" class="cart-btn"> Read More </a>
+            </div>
+          </div>
+
           <div class="col-4">
             <img src="images/product-3.jpg" />
             <h4>Hitman 3</h4>
@@ -397,5 +512,6 @@
     <!-------footer end -->
 
     <script src="script.js"></script>
+    <script src="addToLocal.js"></script>
   </body>
 </html>

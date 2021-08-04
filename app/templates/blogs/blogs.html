@@ -37,10 +37,21 @@
               </p>
               <div class="blog-footer-link">
                 <a href="{% url 'blog' blog.id %}" class="read-more-btn">Read More</a>
-                <span
-                  ><i class="fa fa-thumbs-o-up"></i>8 Likes,
-                  <i class="fa fa-comment-o"></i>5..</span
-                >
+                <span>
+                  <i class="fa fa-thumbs-o-up"></i>8 Likes,
+                  <i class="fa fa-comment-o"></i>5..
+                   
+                  <!-- {% if reviews %}
+                    {% for review in reviews %}
+                      {% if review.blog_id == blog.id %}
+                          <i class="fa fa-thumbs-o-up"></i>{{ review.rating|length }}
+                      {% endif %}
+                    {% endfor %}
+                  {% else %}
+                    <i class="fa fa-thumbs-o-up"></i> 0
+                  {% endif %} -->
+
+                </span>
               </div>
             </div>
           {% endfor %} 

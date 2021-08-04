@@ -16,11 +16,11 @@ def createReview(request, blog_id):
 
         if request.user.is_authenticated:
             # user_id = request.user.id
-            has_connected = Review.objects.all().filter(blog_id=blog_id)
+            has_connected = Review.objects.all().filter(blog_id=blog_id,user_id=user_id)
             if has_connected:
                 messages.error(request,'You Have Already Posted a Review')
-                return redirect('/blogs/'+blog_id)
-
+                return redirect('/blogs/'+blog_id)   
+                                  
         review = Review(blog_id=blog_id,user_id=user_id,user_name=user_name,rating=rating,comments=comments)
         review.save()
         return redirect('/blogs/'+blog_id)
