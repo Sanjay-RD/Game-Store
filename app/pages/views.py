@@ -26,3 +26,6 @@ def index(request):
 def about(request):
     return render(request, 'pages/about.html')
 
+def cart(request):
+    return render(request, 'pages/cart.html')
+

@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="cart-body">
+  <!-- inclued headers -->
+  {% include 'partials/_navbar.html' %}
+  <!-- inclued headers end -->
+  <!-- cart container -->
+  <div class="small-container">
+    <div class="cart-container">
+      <div class="shopping-cart-detail">
+        <h1 style="text-transform: uppercase">Shopping cart</h1>
+        <div class="shopping-cart-content">
+          <!--render from js  -->
+          <div class="cart-row">
+            <table id="cartTable"></table>
+          </div>
+          <!-- render from js -->
+        </div>
+      </div>
+      <div class="shopping-cart-subtotal">
+        <div class="cart-card">
+          <h2 style="text-transform: uppercase">
+            SubTotal (<span id="subtotal">1</span>) Items
+          </h2>
+          <span class="totalPrice" id="totalPrice">Rs. 0</span>
+          <button class="checkout-btn">Proceed To Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- cart container end -->
+</div>
+<script src="{% static 'cart.js' %}"></script>
+{% endblock %}

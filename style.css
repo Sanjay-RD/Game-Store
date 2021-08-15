@@ -1011,11 +1011,12 @@ button.checkout-btn {
   color: #333;
   padding: 10px 20px;
 }
-.cart-added-message {
-  position: absolute;
-  top: 0;
-  color: #fff;
-  right: 0;
+.cart-message-container {
+  position: fixed;
+  top: 10px;
+  background-color: #33b579;
+  right: 10px;
+  padding: 10px 25px;
 }
 /* --------------CART END-------------- */
 
@@ -1184,5 +1185,13 @@ button.checkout-btn {
   }
   .col-4 img {
     height: 400px;
+  }
+}
+
+/* MEDIA QUERY FOR MEDIUM DEVICE */
+@media screen and (max-width: 980px) {
+  .cart-container {
+    display: block;
+    overflow: auto;
   }
 }

@@ -83,19 +83,50 @@
       {% if featured_game %}
         {% for featuredGame in featured_game %}
           <div class="col-4">
-            <a href="{% url 'game' featuredGame.id %}"
-              ><img src="{{ featuredGame.photo_icon_small.url }}"
-            /></a>
-            <a href="{% url 'game' featuredGame.id %}">
-              <h4>{{ featuredGame.gameTitle }}</h4></a>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
+            <div class="box">
+              <div class="box-image">
+                <a href="{% url 'game' featuredGame.id %}"
+                >
+                  <img class="game-image" src="{{ featuredGame.photo_icon_small.url }}"
+                  />
+                </a>
+                <ul class="icon">
+                  <li>
+                    <div>
+                      <span>
+                        <i class="fas fa-search"></i>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="add-to-cart-btn">
+                      <span>
+                        <i class="fas fa-shopping-bag"></i>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span>
+                        <i class="far fa-heart"></i>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <a href="{% url 'game' featuredGame.id %}">
+                <h4 class="game-title">{{ featuredGame.gameTitle }}</h4></a>
+                <div class="rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div class="price">Rs. 5000</div>
+                <a href="{% url 'game' featuredGame.id %}" class="cart-btn">Read More</a>
             </div>
-            <a href="{% url 'game' featuredGame.id %}" class="visit-button">Read More</a>
+            
           </div>
         {% endfor %}
       {% else %}
@@ -111,19 +142,47 @@
       {% if latest_game %}
         {% for latestGame in latest_game %}
           <div class="col-4">
-            <a href="{% url 'game' latestGame.id %}">
-              <img src="{{ latestGame.photo_icon_small.url }}" />
-            </a>
-            <a href="{% url 'game' latestGame.id %}">
-              <h4>{{ latestGame.gameTitle }}</h4>
-            </a>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
+            <div class="box">
+              <div class="box-image">
+                <a href="{% url 'game' latestGame.id %}">
+                  <img class="game-image" src="{{ latestGame.photo_icon_small.url }}" />
+                </a>
+                <ul class="icon">
+                  <li>
+                    <div>
+                      <span>
+                        <i class="fas fa-search"></i>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="add-to-cart-btn">
+                      <span>
+                        <i class="fas fa-shopping-bag"></i>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span>
+                        <i class="far fa-heart"></i>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <a href="{% url 'game' latestGame.id %}">
+                <h4 class="game-title">{{ latestGame.gameTitle }}</h4>
+              </a>
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="price">Rs. 5000</div>
+              <a href="{% url 'game' latestGame.id %}" class="cart-btn">Read More</a>
             </div>
-            <a href="{% url 'game' latestGame.id %}" class="visit-button">Read More</a>
           </div>
         {% endfor %}
       {% else %}
