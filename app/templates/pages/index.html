@@ -123,7 +123,7 @@
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
                 </div>
-                <div class="price">Rs. 5000</div>
+                <div class="price">Rs. {{ featuredGame.price }}</div>
                 <a href="{% url 'game' featuredGame.id %}" class="cart-btn">Read More</a>
             </div>
             
@@ -180,7 +180,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <div class="price">Rs. 5000</div>
+              <div class="price">Rs. {{ latestGame.price }}</div>
               <a href="{% url 'game' latestGame.id %}" class="cart-btn">Read More</a>
             </div>
           </div>

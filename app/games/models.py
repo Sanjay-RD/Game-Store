@@ -8,6 +8,7 @@ from ckeditor.fields import RichTextField
 
 class Game(models.Model):
     gameTitle = models.CharField(max_length=200)
+    price = models.IntegerField(default=0)
     mainDescription = RichTextField()
     minimumRequirement = RichTextField(config_name="special")
     recommendedRequirement = RichTextField(config_name="special")
